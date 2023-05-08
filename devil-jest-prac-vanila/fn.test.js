@@ -1,15 +1,27 @@
-const add = (a, b) => {
-  return a + b;
+const fn = {
+  add: (a, b) => {
+    return a + b;
+  },
+  object: {
+    name: "김태현",
+    age: 20,
+  },
 };
 
-test("1은 1이야", () => {
-  expect(1).toBe(1);
+test("테스트", () => {
+  expect(fn.object).toEqual({
+    name: "김태현",
+    age: 20,
+  });
 });
 
-test("1 더하기 2는 3이야", () => {
-  expect(add(1, 2)).toBe(3);
+test("테스트", () => {
+  expect(fn.object).toStrictEqual({
+    name: "김태현",
+    age: 20,
+  });
 });
 
-test("1 더하기 2는 4이야", () => {
-  expect(add(1, 2)).not.toBe(4);
+test("true?", () => {
+  expect("").toBeFalsy();
 });
